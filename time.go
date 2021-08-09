@@ -10,14 +10,13 @@ import "time"
 
 const timezoneHCM = "Asia/Ho_Chi_Minh"
 
-// GetHCMLocation ...
-func GetHCMLocation() *time.Location {
+// getHCMLocation ...
+func getHCMLocation() *time.Location {
 	l, _ := time.LoadLocation(timezoneHCM)
 	return l
 }
 
-
-// Now ...
-func Now() time.Time {
-	return time.Now().In(GetHCMLocation())
+// now ...
+func now() time.Time {
+	return time.Now().In(getHCMLocation())
 }

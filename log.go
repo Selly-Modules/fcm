@@ -35,7 +35,7 @@ func (s Service) saveLog(doc Log) {
 
 	// Assign data
 	doc.ID = mongodb.NewObjectID()
-	doc.CreatedAt = Now()
+	doc.CreatedAt = now()
 
 	if _, err := s.DB.Collection(logDBName).InsertOne(ctx, doc); err != nil {
 		pretty.Println("*** FCM create log error", err.Error())
